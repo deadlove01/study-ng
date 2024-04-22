@@ -3,20 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ServerComponent } from './server/server.component';
-import { ServersComponent } from './servers/servers.component';
-import {FormsModule} from "@angular/forms";
+import {CoreModule} from "./core/core.module";
+import {HeaderComponent} from "./core/header/header.component";
+import {SharedModule} from "./shared/shared.module";
+import {ContactModule} from "./contact/contact.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ServerComponent,
-    ServersComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    CoreModule,
+    SharedModule,
+    ContactModule
   ],
   providers: [],
   bootstrap: [AppComponent]
