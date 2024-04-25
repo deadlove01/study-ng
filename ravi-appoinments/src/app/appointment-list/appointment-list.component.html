@@ -1,0 +1,44 @@
+<!--<div>-->
+<!--  <input placeholder="appointment description" [(ngModel)]="appointmentTitle"/>-->
+<!--  <input placeholder="appointment date" type="date" [(ngModel)]="appointmentDate" />-->
+<!--  <button (click)="onAddAppointment()">Add</button>-->
+<!--</div>-->
+
+<!--<ul >-->
+<!--  <li  *ngFor="let ap of appointmentList">-->
+<!--    Id {{ap.id}} | Title: {{ap.title}} | Date: {{ap.date | date: 'yyyy-MM-dd'}}-->
+<!--    <button (click)="onDeleteAppointment(ap.id)">Delete</button>-->
+<!--  </li>-->
+
+<!--</ul>-->
+
+
+<!-- Include Bootstrap CSS -->
+<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <!-- Input form for adding appointments -->
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Appointment description" [(ngModel)]="appointmentTitle">
+        <input type="date" class="form-control" [(ngModel)]="appointmentDate">
+        <div class="input-group-append">
+          <button class="btn btn-primary" (click)="onAddAppointment()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- List of appointments -->
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let ap of appointmentList">
+      <div>
+        <span class="font-weight-bold">Id {{ap.id}}</span> |
+        Title: {{ap.title}} |
+        Date: {{ap.date | date: 'yyyy-MM-dd'}}
+      </div>
+      <button class="btn btn-danger btn-sm" (click)="onDeleteAppointment(ap.id)">Delete</button>
+    </li>
+  </ul>
+</div>
